@@ -1,4 +1,3 @@
-#define _DEBUG
 #include <stdio.h>
 #include <stdlib.h>
 #include "safememory.h"
@@ -14,9 +13,9 @@ int main(void) {
 	data2[1] = 'i';
 	data2[2] = '\0';
 	float* data3 = (float*)SafeMemoryAllocate(3 * sizeof(float));
-	data3[0] = 1.0;
-	data3[1] = 1.1;
-	data3[2] = 1.2;
+	data3[0] = 1.0f;
+	data3[1] = 1.1f;
+	data3[2] = 1.2f;
 	SafeMemoryRelease(data2);
 	SafeMemoryRelease(data1);
 	UninitSafememory();

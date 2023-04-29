@@ -40,7 +40,7 @@ void UninitSafememory() {
 		void* buf2 = (SafeMemoryHeader*)safememoryend->before;
 
 #ifdef _DEBUG
-		printf("Free[%x]\n", (unsigned int)safememoryend);
+		printf("Free[%llx]\n", (unsigned long long)safememoryend);
 #endif
 
 		// 解放
@@ -72,7 +72,7 @@ void* SafeMemoryAllocate(size_t size) {
 	safememoryend->after = NULL;
 
 #ifdef _DEBUG
-	printf("Allocate[%x]\n", (unsigned int)safememoryend);
+	printf("Allocate[%llx]\n", (unsigned long long)safememoryend);
 #endif
 
 	return (void*)(safememoryend + 1); // 確保したメモリのヘッダ以降のアドレスをリターンする
@@ -97,7 +97,7 @@ void SafeMemoryRelease(void* data) {
 	free(buf);
 
 #ifdef _DEBUG
-	printf("Free[%x]\n", (unsigned int)buf);
+	printf("Free[%llx]\n", (unsigned long long)buf);
 #endif
 }
 #endif
