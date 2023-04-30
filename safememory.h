@@ -4,8 +4,8 @@
 
 // SafeMemoryではメモリの先頭にヘッダー情報を追加して管理します。
 
-#ifndef SAVEMEMORY
-#define SAVEMEMORY
+#ifndef SAFEMEMORY
+#define SAFEMEMORY
 
 #ifdef _DEBUG
 // デバッグ時のみログを表示
